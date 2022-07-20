@@ -1,15 +1,13 @@
 class Solution(object):
-    def helper(self, s):
-        mapping = {}
-        new_str = []
-        
-        for i, c in enumerate(s):
-            if c not in mapping:
-                mapping[c] = i
-            new_str.append(str(mapping[c]))
-        
-        return " ".join(new_str)
-        
     def isIsomorphic(self, s, t):
-        return self.helper(s) == self.helper(t)
+        mapping1 = {}
+        mapping2 = {}
+        
+        for c1, c2 in zip(s, t):
+            if c1 not in mapping1 and c2 not in mapping2:
+                mapping1[c1] = c2
+                mapping2[c2] = c1
+            elif mapping1.get(c1) != c2 or mapping2.get(c2) != c1:
+                return False
+        return True
         

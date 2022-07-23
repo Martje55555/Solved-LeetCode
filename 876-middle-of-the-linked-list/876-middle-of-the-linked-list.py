@@ -9,19 +9,10 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        size = 0
-        temp = head
+        tortoise = head
+        hare = head
         
-        while temp is not None:
-            temp = temp.next
-            size += 1
-        
-        mid = size // 2
-        
-        curr = head
-        
-        for i in range(mid):
-            curr = curr.next
-        
-        return curr
-        
+        while hare and hare.next != None:
+            tortoise = tortoise.next
+            hare = hare.next.next
+        return tortoise

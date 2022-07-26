@@ -6,17 +6,11 @@
 
 class Solution(object):
     def detectCycle(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
-        exists = []
-        
         curr = head
-        while curr:
-            if curr in exists:
-                return curr
-            else:
-                exists.append(curr)
+        while curr and curr.next:
+            curr.val = sys.maxint
+            if curr.next.val == sys.maxint:
+                return curr.next
             curr = curr.next
+            
         return None

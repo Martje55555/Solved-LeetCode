@@ -5,14 +5,10 @@
 #         self.next = next
 class Solution(object):
     def middleNode(self, head):
-        """
-        :type head: ListNode
-        :rtype: ListNode
-        """
         tortoise = head
         hare = head
         
         while hare and hare.next != None:
-            tortoise = tortoise.next
             hare = hare.next.next
+            tortoise = tortoise.next
         return tortoise

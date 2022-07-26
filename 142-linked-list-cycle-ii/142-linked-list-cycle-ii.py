@@ -10,15 +10,13 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        map = {}
+        exists = []
         
         curr = head
-        index = 0
         while curr:
-            if curr in map:
+            if curr in exists:
                 return curr
             else:
-                map[curr] = index
-                index += 1
+                exists.append(curr)
             curr = curr.next
         return None

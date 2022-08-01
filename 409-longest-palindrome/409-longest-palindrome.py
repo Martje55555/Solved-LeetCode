@@ -13,6 +13,6 @@ class Solution(object):
                 hold.add(s[i])
                                 
         if bool(len(hold) < 1):
-            return (len(s) - len(hold))
+            return len(s)
         
         return len(s) - len(hold) + 1

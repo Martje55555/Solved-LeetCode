@@ -11,9 +11,7 @@ class Solution(object):
                 hold.remove(s[i])
             else:
                 hold.add(s[i])
-                
-        print(hold)
-                
+                                
         if bool(len(hold) < 1):
             return (len(s) - len(hold))
         

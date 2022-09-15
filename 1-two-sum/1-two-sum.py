@@ -1,13 +1,8 @@
 class Solution(object):
     def twoSum(self, nums, target):
-        diff = {}
-        
+        differences = {}
         for i, num in enumerate(nums):
-            if target - num in diff:
-                return [i, diff[target-num]]
-            else:
-                diff[num] = i
-        
+            diff = target-num
+            if diff in differences: return [differences[diff], i]
+            else: differences[num] = i
         return []
-        
-        
